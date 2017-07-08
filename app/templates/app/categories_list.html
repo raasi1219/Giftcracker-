@@ -1,0 +1,19 @@
+{% block content %}
+ <h1> <center> Categories List </center> </h1>
+
+   {% if categorys %}
+
+
+   <div id = "horizontal menu" float = "right">
+       <ul class="menu">
+              {% for c in  categorys %}
+                <li><a href = {% url 'user_home' %} >{{c.category_type}}</a></li>
+          {% endfor %} 
+       </ul>
+      </div>
+     {% else %}
+        <p> hello there are no categories </p>
+     {% endif %}    
+{% endblock %}
+
+

@@ -1,0 +1,22 @@
+
+{% block content %}
+{% load static %}
+<html>
+<head>
+<title>Login</title>
+<style>
+body {
+    background-image: url("{% static "app\b1.jpg" %}");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+</style>
+<body>
+     <h2><center>Login</center></h2>
+     <form method = "post">
+     {% csrf_token %}
+    <center> {{ form.as_p}}</center>
+     <center><button type = "submit">Login</button></center>
+     </form>
+</body></html>
+{% endblock %}

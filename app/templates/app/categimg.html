@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Category</title>
+{% load static %}
+
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+#design-cast {
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    background-image: url("{% static "app\b1.jpg" %}");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.member {
+    float: left;
+    width: 31%;
+    margin: 1% 1%  1%;
+}
+.name {
+    position: absolute;
+    bottom: 0px;
+}
+.member  img {
+    width: 100%;
+    display: block;
+}
+</style>
+</head>
+
+<body> <!--background ="{% static "app\bg1.jpg" %}"  width= "100%" height="439" -->
+
+        {% block content %}
+        
+            {% for i in cat %} 
+
+             {% if  i.category_type == "cakes" %}  
+            <div class = "member">
+            <center><figure>
+          <a href = {% url 'cake_cat' %} ><img src = "{% get_media_prefix %}{{i.imagepath}}"width="250" height="250"></a>
+         <figcaption><b><i><leftcenter><fontsize = "25"><h1>{{i.category_type}}</h1></fontsize></leftcenter></i></b></figcaption>
+          </figure><br></center></div>
+         {% elif  i.category_type == "flowers" %}  
+          <div class="member">           
+          <center><figure>
+          <a href = {% url 'flow_cat' %} ><img src = "{% get_media_prefix %}{{i.imagepath}}"width="250" height="250"></a>
+         <figcaption><b><i><leftcenter><fontsize = "25"><h1>{{i.category_type}}</h1></fontsize></leftcenter></i></b></figcaption>
+          </figure><br></center></div>
+       {% elif  i.category_type == "dresses" %} 
+          <div class="member"> 
+           <center><figure>
+          <a href = {% url 'dress_cat' %} ><img src = "{% get_media_prefix %}{{i.imagepath}}"width="250" height="250"></a>
+         <figcaption><b><i><leftcenter><fontsize = "25"><h1>{{i.category_type}}</h1></fontsize></leftcenter></i></b></figcaption>
+          </figure><br></center></div>
+      {% elif  i.category_type == "cards" %} 
+          <div class="member"> 
+           <center><figure>
+          <a href = {% url 'card_cat' %} ><img src = "{% get_media_prefix %}{{i.imagepath}}"width="250" height="250"></a>
+         <figcaption><b><i><leftcenter><fontsize = "25"><h1>{{i.category_type}}</h1></fontsize></leftcenter></i></b></figcaption>
+          </figure><br></center></div>
+      {% elif  i.category_type == "accessories" %}
+          <div class="member">  
+           <center><figure>
+          <a href = {% url 'acce_cat' %} ><img src = "{% get_media_prefix %}{{i.imagepath}}"width="250" height="250"></a>
+         <figcaption><b><i><leftcenter><fontsize = "25"><h1>{{i.category_type}}</h1></fontsize></leftcenter></i></b></figcaption>
+          </figure><br></center></div>
+        {% elif  i.category_type == "toys" %}
+             <div class="member">  
+           <center><figure>
+          <a href = {% url 'toys_cat' %} ><img src = "{% get_media_prefix %}{{i.imagepath}}"width="250" height="250"></a>
+         <figcaption><b><i><leftcenter><fontsize = "25"><h1>{{i.category_type}}</h1></fontsize></leftcenter></i></b></figcaption>
+          </figure><br></center></div>
+           
+         {% endif %}  
+          {%  endfor %}
+         
+            {% for j in c_cat %} 
+          <div class = "member">
+          <figure>
+  <a href = {% url 'ord_catc' %} >
+          <img src = "{% get_media_prefix %}{{j.imagepath}}"width="250" height="250">
+          </figure>
+          <p style="text-align:center;"><b><b>{{j.size }}
+          <p style="text-align:center;"><b>price:<b>{{j.price}}
+          <p style="text-align:center;"><b>stock:<b>{{j.stock}}
+        </div>
+          {% endfor %}
+
+  {% for k in d_cat %} 
+          <div class="member">
+          <figure>
+  <a href = {% url 'ord_catd' %} >
+          <img src = "{% get_media_prefix %}{{k.imagepath}}"width="250" height="250">
+          
+          </figure>
+           <p style="text-align:center;"><b>{{k.size }}<b>
+           <p style="text-align:center;"><b>price:<b>{{k.price}}
+          <p style="text-align:center;"><b>stock:<b>{{k.stock}}
+        </div>
+          {% endfor %}
+   {% for l in t_cat %} 
+          <div class="member">
+          <figure>
+  <a href = {% url 'ord_catt' %} >
+          <img src = "{% get_media_prefix %}{{l.imagepath}}"width="250" height="250">
+          
+          </figure>
+          <p style="text-align:center;"><b><b>{{l.size }}
+          <p style="text-align:center;"><b>price:<b>{{l.price}}
+          <p style="text-align:center;"><b>stock:<b>{{l.stock}}
+        </div>
+          {% endfor %}
+   {% for m in ac_cat %} 
+          <div class="member">
+          <figure>
+            <a href = {% url 'ord_cata' %} >
+          <img src = "{% get_media_prefix %}{{m.imagepath}}"width="250" height="250">
+          </a>
+          </figure>
+           <p style="text-align:center;"><b><b>{{m.size }}
+          <p style="text-align:center;"><b>price:<b>{{m.price}}
+          <p style="text-align:center;"><b>stock:<b>{{m.stock}}
+        </div>
+          {% endfor %}
+   {% for n in f_cat %} 
+          <div class="member">
+          <figure>
+  <a href = {% url 'ord_catf' %} >
+          <img src = "{% get_media_prefix %}{{n.imagepath}}"width="250" height="250">
+          
+          </figure>
+          <p style="text-align:center;"><b><b>{{n.size }}
+          <p style="text-align:center;"><b>price:<b>{{n.price}}
+          <p style="text-align:center;"><b>stock:<b>{{n.stock}}
+          </div>
+          {% endfor %}
+   {% for o in ca_cat %} 
+          <div class="member">
+          <figure>
+  <a href = {% url 'ord_catca' %} >
+          <img src = "{% get_media_prefix %}{{o.imagepath}}"width="500" height="250">
+          
+          </figure>
+          <p style="text-align:center;"><b><b>{{o.size }}
+          <p style="text-align:center;"><b>price:<b>{{o.price}}
+          <p style="text-align:center;"><b>stock:<b>{{o.stock}}
+        </div>
+          {% endfor %}
+{% endblock %}
+
+</body>
+</html>

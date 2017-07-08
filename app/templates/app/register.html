@@ -1,0 +1,100 @@
+{% block body_block %}
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+
+#design-cast {
+    position: relative;
+    overflow: hidden;
+}
+.member {
+    float: left;
+    width: 31%;
+    margin: 0;
+}
+
+#sec-one {
+  background-color: teal;
+  color:white; 
+  height: 100px;
+  width: 100%;
+  padding:0px;
+ margin:0;
+ border-collapse: collapse;
+}
+.name {
+    position: absolute;
+    bottom: 0px;
+}
+
+
+.member  img {
+    width: 100%;
+    display: block;
+     margin-top: -4px 
+} 
+</style>
+</head>
+<table  id="sec-one">
+
+<tr><td colspan = "3"><i><center><b><h1> GiftCracker</h1></b></center></i></td></tr> 
+<tr>
+<td colspan = "3"><center><cite>We Deliver , You Celebrate </cite></center></p></td><tr> 
+<tr><td><a href="{% url 'login'%}" class="glyphicon glyphicon-user" value="login"><button  style="float:right;height: 30px; width: 100px;" >login</button></a></td>
+<td><a href="{% url 'signup'%}" class="glyphicon glyphicon-log-in" value="signup"><button  style="float: left;height: 30px; width: 100px;">signup</button></a></td>
+</tr>
+
+</table>
+
+ <body bgcolor = "powderblue">
+<div>
+<title>GiftCracker</title>
+
+<body>
+
+{% load static %}
+<div class = "member">
+          <center><figure>
+        <img src= "{% static "app\sp1.jpg" %}" width="300" height="141">
+         <figcaption><p style="text-align:center;">gift for birthday</figcaption></figure></center>
+</div>
+
+  <div class = "member">
+          <center><figure>
+        <img src= "{% static "app\sp2.jpg" %}"width="300" height="141">
+         <figcaption><p style="text-align:center;">gift for valentine</figcaption></figure></center>
+</div>
+  
+  
+    <div class = "member">
+          <center><figure>
+        <img src= "{% static "app\sp3.jpg" %}"width="300" height="141">
+         <figcaption><p style="text-align:center;">gift a card</figcaption></figure></center>
+</div>
+   
+
+    <div class = "member">
+          <center><figure>
+        <img src= "{% static "app\sp4.jpg" %}" width="300" height="141">
+         <figcaption><p style="text-align:center;">gift a dress</figcaption></figure></center>
+</div>
+
+      <div class = "member">
+          <center><figure>
+        <img src= "{% static "app\sp5.jpg" %}" width="300" height="141">
+         <figcaption><p style="text-align:center;">gift for chid</figcaption></figure></center>
+</div>
+  
+
+  <div class = "member">
+          <center><figure>
+        <img src= "{% static "app\sp6.jpg" %}" width="300" height="141">
+         <figcaption><p style="text-align:center;">gift an accessory</figcaption></figure></center>
+</div>
+  
+</div>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% block content %}
+{% load static %}
+<html>
+<head>
+<title>SignUp</title>
+<style>
+body {
+    background-image: url("{% static "app\b1.jpg" %}");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+</style>
+<body>
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+         {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+
+ 
+      <button type="submit">Sign up</button>
+    
+  </form>
+</body></html>
+{% endblock %}

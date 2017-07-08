@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title> {% block title %} Orders {% endblock %} </title>
+{% load static %}
+
+<style>
+body {
+    background-image: url("{% static "app\b1.jpg" %}");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+</style>
+
+    </head>
+
+    <body>
+ {% block content %}
+        
+        <h1><center>Orders</center> <h1>
+        {% for l in csm %}
+               
+             <img src = "{% get_media_prefix %}{{l.s_c_id}}"width="300" height="250"> </br>
+                
+                {% endfor %}
+<table>
+           <tr><td>Quantity : </td><td><select>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+			   <option value="5">5</option>
+			   <option value="6">6</option>
+			   <option value="7">7</option>
+		           <option value="8">8</option>
+                      </select></td></tr> 
+           <tr><td> Date : </td><td><input type="date" name = "Date" > </td></tr>
+            <tr><td>Address : </td><td><textarea rows = "4" cols = "70" name = "Adress"></textarea> </td></tr>
+            <tr><td>Note : </td><td> <textarea rows = "4" cols = "70" name=" Note"></textarea></td></tr>
+              <tr><td> <a href = "http://127.0.0.1:8000/app/thankyou";><button>Buynow</button></a></td></tr>
+                      
+        {% endblock %}
+    </body>
+</html>

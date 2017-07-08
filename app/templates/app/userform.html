@@ -1,0 +1,80 @@
+{% block body_block %}
+<!DOCTYPE html>
+<html>
+<title>GiftCracker</title>
+<head>
+<style>
+
+#design-cast {
+    position: relative;
+    overflow: hidden;
+}
+.member {
+    float: left;
+    width: 31%;
+    margin: 0;
+}
+
+#sec-one {
+  background-color: teal;
+  color:white; 
+  height: 100px;
+  width: 100%;
+  padding:0px;
+ margin:0;
+ border-collapse: collapse;
+}
+.name {
+    position: absolute;
+    bottom: 0px;
+}
+
+
+.member  img {
+    width: 100%;
+    display: block;
+     margin-top: -4px 
+} 
+</style>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% load static %}
+<body>    
+ <!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>  
+<font color="blue"> <a href= {% url 'sub_cat' %}  class="w3-bar-item w3-button">Birthday</a></fontcolor>
+<font color="red"><a href= {% url 'sub_cat' %} class="w3-bar-item w3-button">Anniversary</a></fontcolor>
+<font color="green"><a href= {% url 'sub_cat' %}  class="w3-bar-item w3-button">Rakhi</a></fontcolor>
+<font color="brown"><a href={% url 'sub_cat' %} class="w3-bar-item w3-button">Diwali</a></fontcolor>
+<font color="#008080"><a href={% url 'sub_cat' %}  class="w3-bar-item w3-button">Valentines day</a></fontcolor>
+<font color="#86187F"><a href={% url 'sub_cat' %} class="w3-bar-item w3-button">Mothers day</a></fontcolor>
+<font color="#188674"><a href={% url 'sub_cat' %}  class="w3-bar-item w3-button">Fathers day</a></fontcolor>
+<font color="#798618"><a href={% url 'sub_cat' %} class="w3-bar-item w3-button">Frienship day</a></fontcolor>
+<font color="#FF00FF"><a href={% url 'sub_cat' %}  class="w3-bar-item w3-button">Holi</a></fontcolor>
+</div>
+
+    
+<!-- Page Content -->
+<table id = "sec-one">
+  <tr><td><button class="w3-button w3-teal w3-large" onclick="w3_open()">☰Select</button></td>
+     <td> <h1><center>Make Occasions Memorable With GiftCracker</center></h1> </td>
+  </table>
+
+{% load static %}
+<center><img src="{% static "app\us1.jpg" %}"  width= "100%" height="439" ></center>
+
+
+<script>
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+     
+</body>
+</html> 
+{% endblock %}
